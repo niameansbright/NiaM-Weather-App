@@ -1,0 +1,123 @@
+body {
+  background-color: #d2c0d6;
+}
+header h1 {
+  text-align: center;
+  padding: 5px 0px 15px 0px;
+  line-height: 100%;
+  font-family: DotGothic16;
+}
+#happyDay {
+  padding: 20px 0px 0px 0px;
+}
+.container {
+  border: 1px solid black;
+  border-radius: 10px;
+  max-width: 700px;
+  margin: 0 auto;
+  background-image: url("src//Backgrounds/clouds.jpeg");
+  background-size: cover;
+}
+h1,
+h2,
+p {
+  margin: 0px;
+  font-weight: bold;
+}
+form {
+  text-align: center;
+  padding: 20px 0px 5px 0px;
+  font-family: DotGothic16;
+}
+#formButton {
+  border: 1px solid black;
+  border-radius: 2px;
+  background-color: #d2c0d6;
+}
+#formButton:hover {
+  background-color: #1672fc;
+}
+#city-input {
+  border: 1px solid black;
+  border-radius: 2px;
+  outline: none;
+}
+#city-input:focus {
+  border: 1px solid #1672fc;
+}
+.currentLocationOption {
+  font-size: 12px;
+  font-family: DotGothic16;
+  text-align: center;
+  padding: 0px 0px 5px 0px;
+  font-weight: bold;
+}
+.main {
+  padding: 0px;
+  margin: 0px 0px 20px 10px;
+  font-family: DotGothic16;
+}
+#looksLikeImg img {
+  width: 10%;
+}
+.weatherSpecs {
+  line-height: 120%;
+  font-size: 14px;
+  padding: 10px 0px;
+}
+.temp h1 {
+  font-size: 77px;
+  padding: 0px;
+  margin: 0px;
+}
+.temp {
+  text-align: left;
+  padding-top: 40px;
+  line-height: 10px;
+  margin: 0px;
+}
+.degrees {
+  font-size: 16px;
+  vertical-align: text-top;
+}
+a:link {
+  text-decoration: none;
+  color: #3ae4ff;
+}
+a:hover {
+  cursor: pointer;
+  color: #d2c0d6;
+}
+.highLow {
+  font-size: 14px;
+}
+.moonforecast {
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  line-height: 10px;
+  font-size: 13px;
+}
+#moonImg img {
+  width: 35%;
+  margin: 0 auto;
+  padding: 0px;
+}
+.extendedforecast {
+  text-align: center;
+  line-height: 7px;
+  padding: 0px 0px 20px 0px;
+  margin: 0px;
+  font-family: DotGothic16;
+}
+.cloudsm img {
+  width: 30%;
+  padding: 5px 0px;
+}
+footer {
+  text-align: center;
+  font-size: 12px;
+  padding-top: 10px;
+  font-family: DotGothic16;
+  font-weight: bold;
+}

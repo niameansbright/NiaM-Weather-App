@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/5e0fc3e1b0.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Knewave&family=Nothing+You+Could+Do&family=Scheherazade:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nia Weather App</title>
+  </head>
+  <body>
+    <header>
+      <h1 id="happyDay">Happy Sunday!</h1>
+      <h1>Let's check the weather!</h1>
+    </header>
+    <div class="container">
+      <form id="cityForm">
+        <input
+          type="text"
+          id="city-input"
+          placeholder="Enter your city!"
+        /><input type="submit" value="Select" id="formButton" />
+      </form>
+      <div class="currentLocationOption">
+        <p>
+          <a href="#">
+            Or, choose your current location
+            <i class="fas fa-map-marker-alt"></i>
+          </a>
+        </p>
+      </div>
+      <div class="main">
+        <div class="row">
+          <div class="col-5">
+            <div class="city">
+              <h1 id="cityName">Toronto</h1>
+              <p id="currentTime">N/A</p>
+              <p id="todaysDate">N/A</p>
+
+              <p>
+                Looks Like: <span id="looksLike">N/A </span
+                ><span id="looksLikeImg"
+                  ><img id="llImg" src="src/Icons/Clear.png" /></span
+                ><br /><div class="weatherSpecs"
+                  >Humidity: <span id="humidity">N/A</span><br />
+                  Precipitation: <span id="precip">N/A</span> <br />Wind:
+                  <span id="windspeed">N/A</span> <br />
+                  UV Index: <span id="uvIndex">N/A</span><br />
+                  Air Quality: <span id="airQual">N/A</span>
+                </div>
+              </p>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="temp">
+              <h1>
+                <span id="currentTemp">N/A</span
+                ><span class="degrees"
+                  ><span id="celcius"><a href="#">°C</a></span>
+                  |
+                  <span id="fahrenheit"><a href="#">°F</a></span></span
+                >
+              </h1>
+              <br />
+              <p class="highLow">H N/A/L N/A</p>
+            </div>
+          </div>
+
+          <div class="col-3">
+            <div class="moonforecast">
+              <p><strong>The Moon</strong></p>
+              <br />
+              <div id="moonImg">
+                <img id="moon" src="src/Moons/Full Moon.png" />
+              </div>
+              <br />
+              <p><span id="moonphase">N/A</span></p>
+              <br />
+              <p>in <span id="moonsign">TBD Zodiac</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="extendedforecast">
+        <div class="row">
+          <div class="col-2">
+            <span id="firstDay">Mon</span><br />
+            <div class="cloudsm"><img src="src/Icons/Clouds.png" /></div>
+            <br /><span id="firstTemp">19°C</span>
+          </div>
+          <div class="col-2">
+            <span id="secondDay">Tues</span><br />
+            <div class="cloudsm"><img src="src/Icons/Clouds.png" /></div>
+            <br /><span id="secondTemp">19°C</span>
+          </div>
+          <div class="col-2">
+            <span id="thirdDay">Wed</span><br />
+            <div class="cloudsm"><img src="src/Icons/Clouds.png" /></div>
+            <br /><span id="thirdTemp">19°C</span>
+          </div>
+          <div class="col-2">
+            <span id="fourthDay">Thurs</span><br />
+            <div class="cloudsm"><img src="src/Icons/Clouds.png" /></div>
+            <br /><span id="fourthTemp">19°C</span>
+          </div>
+          <div class="col-2">
+            <span id="fifthDay">Fri</span><br />
+            <div class="cloudsm"><img src="src/Icons/Clouds.png" /></div>
+            <br /><span id="fifthTemp">19°C</span>
+          </div>
+          <div class="col-2">
+            <span id="sixthDay">Sat</span><br />
+            <div class="cloudsm"><img src="src/Icons/Clouds.png" /></div>
+            <br /><span id="sixthTemp">19°C</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>Coded by Nia M</footer>
+  </body>
+  <script src="app.js"></script>
+</html>
