@@ -82,7 +82,7 @@ form {
 }
 a:link {
   text-decoration: none;
-  color: #3ae4ff;
+  color: #1672fc;
 }
 a:hover {
   cursor: pointer;
@@ -102,6 +102,9 @@ a:hover {
   width: 35%;
   margin: 0 auto;
   padding: 0px;
+}
+#sunsignImg img {
+  width: 10%;
 }
 .extendedforecast {
   text-align: center;
