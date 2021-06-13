@@ -124,3 +124,6 @@ footer {
   font-family: DotGothic16;
   font-weight: bold;
 }
+#gitHubLink a:hover {
+  color: #9175aa;
+}
