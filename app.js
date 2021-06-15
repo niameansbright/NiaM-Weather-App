@@ -88,7 +88,7 @@ function showTemperature(response) {
   let apiKey = "0186a72d83fe77f4f0abea93bd1ec421";
   let units = "metric";
   let apiUrlOc = "https://api.openweathermap.org/data/2.5/onecall?";
-  let apiUrlAirQual = "http://api.openweathermap.org/data/2.5/air_pollution?";
+  let apiUrlAirQual = "https://api.openweathermap.org/data/2.5/air_pollution?";
   axios
     .get(`${apiUrlOc}lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`)
     .then(initiateOneCall);
