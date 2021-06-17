@@ -214,6 +214,8 @@ function showMoonSign(response) {
   moonsignData.innerHTML = `${moonsign}`;
 }
 
+//Sun Sign Work In Progress
+
 //Celcius Work In Progress
 function changeToCel(response) {
   let chosenCity = document.querySelector("#cityName");

@@ -58,7 +58,7 @@ form {
   font-family: DotGothic16;
 }
 #looksLikeImg img {
-  width: 10%;
+  width: 28px;
 }
 .weatherSpecs {
   line-height: 120%;
@@ -95,11 +95,11 @@ a:hover {
   text-align: center;
   padding: 0px;
   margin: 0px;
-  line-height: 10px;
+  line-height: 11px;
   font-size: 13px;
 }
 #moonImg img {
-  width: 35%;
+  width: 52px;
   margin: 0 auto;
   padding: 0px;
 }
@@ -114,7 +114,7 @@ a:hover {
   font-family: DotGothic16;
 }
 .cloudsm img {
-  width: 30%;
+  width: 28px;
   padding: 5px 0px;
 }
 footer {
