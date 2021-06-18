@@ -113,14 +113,18 @@ function showTemperature(response) {
     document.getElementById("llImg").src = "src/Icons/Clouds.png";
   } else if (looksLike === "Drizzle") {
     document.getElementById("llImg").src = "src/Icons/Drizzle.png";
-  } else if (looksLike === "Dust" || "Sand") {
+  } else if (looksLike === "Dust") {
     document.getElementById("llImg").src = "src/Icons/DustSand.png";
-  } else if (looksLike === "Fog" || "Haze") {
+  } else if (looksLike === "Fog") {
+    document.getElementById("llImg").src = "src/Icons/FogHaze.png";
+  } else if (looksLike === "Haze") {
     document.getElementById("llImg").src = "src/Icons/FogHaze.png";
   } else if (looksLike === "Mist") {
     document.getElementById("llImg").src = "src/Icons/Mist.png";
   } else if (looksLike === "Rain") {
     document.getElementById("llImg").src = "src/Icons/Rain.png";
+  } else if (looksLike === "Sand") {
+    document.getElementById("llImg").src = "src/Icons/DustSand.png";
   } else if (looksLike === "Smoke") {
     document.getElementById("llImg").src = "src/Icons/Smoke.png";
   } else if (looksLike === "Snow") {
