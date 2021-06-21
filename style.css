@@ -13,9 +13,9 @@ header h1 {
 .container {
   border: 1px solid black;
   border-radius: 10px;
+  background-image: url("src//Backgrounds/clouds.jpeg");
   max-width: 700px;
   margin: 0 auto;
-  background-image: url("src//Backgrounds/clouds.jpeg");
   background-size: cover;
 }
 h1,
@@ -46,11 +46,19 @@ form {
   border: 1px solid #1672fc;
 }
 .currentLocationOption {
+  text-align: center;
   font-size: 12px;
   font-family: DotGothic16;
-  text-align: center;
   padding: 0px 0px 5px 0px;
   font-weight: bold;
+}
+.currentLocationOption a:link {
+  text-decoration: none;
+  color: #1672fc;
+}
+.currentLocationOption a:hover {
+  cursor: pointer;
+  color: #9175aa;
 }
 .main {
   padding: 0px;
@@ -80,13 +88,21 @@ form {
   font-size: 16px;
   vertical-align: text-top;
 }
-a:link {
-  text-decoration: none;
-  color: #1672fc;
+.degrees .active a:link {
+  color: black;
 }
-a:hover {
+.degrees .active a:hover {
+  cursor: default;
+  color: black;
+}
+.degrees .inactive a:link {
+  color: #1672fc;
+  text-decoration: none;
+}
+.degrees .inactive a:hover {
+  text-decoration: none;
+  color: #9175aa;
   cursor: pointer;
-  color: #d2c0d6;
 }
 .highLow {
   font-size: 14px;
@@ -123,6 +139,10 @@ footer {
   padding-top: 10px;
   font-family: DotGothic16;
   font-weight: bold;
+}
+#gitHubLink a:link {
+  text-decoration: none;
+  color: #1672fc;
 }
 #gitHubLink a:hover {
   color: #9175aa;

@@ -37,7 +37,6 @@ if (hours < 10) hours = "0" + hours;
 greeting.innerHTML = `Happy ${day}!`;
 timeToday.innerHTML = `${hours}:${minutes} EST`;
 dateToday.innerHTML = `${day}, ${month} ${date}, ${year}`;
-
 let apiKey = "0186a72d83fe77f4f0abea93bd1ec421";
 let units = "metric";
 let apiUrl = "https://api.openweathermap.org/data/2.5/weather?";
@@ -142,6 +141,11 @@ function showTemperature(response) {
   let windspeed = Math.round(response.data.wind.speed);
   let windspeedData = document.querySelector("#windspeed");
   windspeedData.innerHTML = `${windspeed} miles/h`;
+  celciusTemperature = Math.round(response.data.main.temp);
+  celciusHighLow = `H ${high}°C/L ${low}°C`;
+  fahrenheitHighLow = `H ${Math.round((high * 9) / 5 + 32)}°F/L ${Math.round(
+    (low * 9) / 5 + 32
+  )}°F`;
 }
 
 function initiateOneCall(response) {
@@ -211,6 +215,42 @@ function initiateAirQual(response) {
   }
 }
 
+let celciusTemperature = null;
+let celciusHighLow = null;
+let fahrenheitHighLow = null;
+
+//MAIN Celcius
+function changeToCel(event) {
+  event.preventDefault();
+  let currentTemp = document.querySelector("#currentTemp");
+  let celCurrent = celciusTemperature;
+  celLink.classList.add("active");
+  farLink.classList.remove("active");
+  celLink.classList.remove("inactive");
+  farLink.classList.add("inactive");
+  currentTemp.innerHTML = Math.round(celCurrent);
+  let highLow = document.querySelector(".highLow");
+  highLow.innerHTML = celciusHighLow;
+}
+let celLink = document.querySelector("#celcius");
+celLink.addEventListener("click", changeToCel);
+
+//MAIN Fahrenheit
+function changeToFar(event) {
+  event.preventDefault();
+  let farCurrent = (celciusTemperature * 9) / 5 + 32;
+  let currentTemp = document.querySelector("#currentTemp");
+  farLink.classList.add("active");
+  celLink.classList.remove("active");
+  farLink.classList.remove("inactive");
+  celLink.classList.add("inactive");
+  currentTemp.innerHTML = Math.round(farCurrent);
+  let highLow = document.querySelector(".highLow");
+  highLow.innerHTML = fahrenheitHighLow;
+}
+let farLink = document.querySelector("#fahrenheit");
+farLink.addEventListener("click", changeToFar);
+
 //Moon Sign Work In Progress
 function showMoonSign(response) {
   let moonsign = response.data.planets[0].name;
@@ -220,23 +260,8 @@ function showMoonSign(response) {
 
 //Sun Sign Work In Progress
 
-//Celcius Work In Progress
-function changeToCel(response) {
-  let chosenCity = document.querySelector("#cityName");
-  city.innerHTML = `${chosenCity.value}`;
-  let apiKey = "0186a72d83fe77f4f0abea93bd1ec421";
-  let units = "metric";
-  let apiUrlCel = "https://api.openweathermap.org/data/2.5/weather?";
-  axios
-    .get(`${apiUrlCel}q=${chosenCity.value}&appid=${apiKey}&units=${units}`)
-    .then(initiateOneCall);
-
-  //Celcius Work in Progress
-  let celCurrent = Math.round(response.data.main.temp);
-  let celCurrentData = document.querySelector("#currentTemp");
-  celCurrentData.innerHTML = `${celCurrent}`;
-  let celHighLow = document.querySelector(".highLow");
-  celHighLow.innerHTML = `H 24°C/L 10°C`;
+//ADD TO MAIN Celcius Work in Progress
+function changeToCell() {
   let celTempOne = document.querySelector("#firstTemp");
   celTempOne.innerHTML = `19°C`;
   let celTempTwo = document.querySelector("#secondTemp");
@@ -250,33 +275,11 @@ function changeToCel(response) {
   let celTempSix = document.querySelector("#sixthTemp");
   celTempSix.innerHTML = `19°C`;
 }
-let celLink = document.querySelector("#celcius");
-celLink.addEventListener("click", changeToCel);
+let cellLink = document.querySelector("#celcius");
+cellLink.addEventListener("click", changeToCel);
 
-//Fahrenheit Work In Progress
-function changeToFar(event) {
-  event.preventDefault();
-  let chosenCity = document.querySelector("#cityName");
-  if (chosenCity === `Toronto`) {
-    chosenCity = `toronto`;
-  }
-  let apiKey = "0186a72d83fe77f4f0abea93bd1ec421";
-  let units = "imperial";
-  let apiUrlFar = "https://api.openweathermap.org/data/2.5/weather?";
-  axios
-    .get(`${apiUrlFar}q=${chosenCity.value}&appid=${apiKey}&units=${units}`)
-    .then(getFar);
-}
-let farLink = document.querySelector("#fahrenheit");
-farLink.addEventListener("click", changeToFar);
-
-//Fahrenheit Work In Progress
-function getFar(response) {
-  let farCurrent = Math.round(response.data.main.temp);
-  let farCurrentData = document.querySelector("#currentTemp");
-  farCurrentData.innerHTML = `${farCurrent}`;
-  let farHighLow = document.querySelector(".highLow");
-  farHighLow.innerHTML = `H 75°F/L 50°F`;
+//ADD TO MAIN Fahrenheit Work In Progress
+function getFar() {
   let farTempOne = document.querySelector("#firstTemp");
   farTempOne.innerHTML = `66°F`;
   let farTempTwo = document.querySelector("#secondTemp");
