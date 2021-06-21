@@ -1,5 +1,11 @@
 body {
-  background-color: #d2c0d6;
+  background: radial-gradient(
+    circle at 7.4% 45.1%,
+    rgb(244, 229, 252) 0%,
+    rgb(225, 249, 255) 45.1%,
+    rgb(238, 253, 253) 78.4%,
+    rgb(247, 255, 249) 90%
+  );
 }
 header h1 {
   text-align: center;
@@ -31,11 +37,11 @@ form {
 #formButton {
   border: 1px solid black;
   border-radius: 2px;
-  background-color: #d2c0d6;
+  background-color: #f4e5fc;
 }
 #formButton:hover {
-  background-color: #375a99;
-  color: white;
+  background-color: #fef200;
+  color: black;
 }
 #city-input {
   border: 1px solid black;
@@ -43,7 +49,7 @@ form {
   outline: none;
 }
 #city-input:focus {
-  border: 1px solid #375a99;
+  border: 1px solid #fef200;
 }
 .currentLocationOption {
   text-align: center;
@@ -54,15 +60,15 @@ form {
 }
 .currentLocationOption a:link {
   text-decoration: none;
-  color: #375a99;
+  color: #f4e5fc;
 }
 .currentLocationOption a:visited {
   text-decoration: none;
-  color: #375a99;
+  color: #f4e5fc;
 }
 .currentLocationOption a:hover {
   cursor: pointer;
-  color: #9175aa;
+  color: #fef200;
 }
 .main {
   padding: 0px;
@@ -103,15 +109,15 @@ form {
   color: black;
 }
 .degrees .inactive a:link {
-  color: #375a99;
+  color: #f4e5fc;
   text-decoration: none;
 }
 .degrees .inactive a:visited {
-  color: #375a99;
+  color: #f4e5fc;
 }
 .degrees .inactive a:hover {
   text-decoration: none;
-  color: #9175aa;
+  color: #fef200;
   cursor: pointer;
 }
 
@@ -153,12 +159,12 @@ footer {
 }
 #gitHubLink a:link {
   text-decoration: none;
-  color: #375a99;
+  color: #676d79;
 }
 #gitHubLink a:visited {
   text-decoration: none;
-  color: #375a99;
+  color: #676d79;
 }
 #gitHubLink a:hover {
-  color: #9175aa;
+  color: #fef200;
 }
