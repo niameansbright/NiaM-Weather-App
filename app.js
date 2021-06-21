@@ -93,7 +93,8 @@ function showTemperature(response) {
     .then(initiateOneCall);
   axios
     .get(`${apiUrlAirQual}lat=${lat}&lon=${lon}&appid=${apiKey}`)
-    .then(initiateAirQual);
+    .then(initiateAirQual)
+    .then(looksLikeCall);
   let temperature = Math.round(response.data.main.temp);
   let current = document.querySelector("#currentTemp");
   current.innerHTML = `${temperature}`;
@@ -104,37 +105,6 @@ function showTemperature(response) {
   let looksLike = response.data.weather[0].main;
   let looksLikeData = document.querySelector("#looksLike");
   looksLikeData.innerHTML = `${looksLike} `;
-  if (looksLike === "Ash") {
-    document.getElementById("llImg").src = "src/Icons/Ash.png";
-  } else if (looksLike === "Clear") {
-    document.getElementById("llImg").src = "src/Icons/Clear.png";
-  } else if (looksLike === "Clouds") {
-    document.getElementById("llImg").src = "src/Icons/Clouds.png";
-  } else if (looksLike === "Drizzle") {
-    document.getElementById("llImg").src = "src/Icons/Drizzle.png";
-  } else if (looksLike === "Dust") {
-    document.getElementById("llImg").src = "src/Icons/DustSand.png";
-  } else if (looksLike === "Fog") {
-    document.getElementById("llImg").src = "src/Icons/FogHaze.png";
-  } else if (looksLike === "Haze") {
-    document.getElementById("llImg").src = "src/Icons/FogHaze.png";
-  } else if (looksLike === "Mist") {
-    document.getElementById("llImg").src = "src/Icons/Mist.png";
-  } else if (looksLike === "Rain") {
-    document.getElementById("llImg").src = "src/Icons/Rain.png";
-  } else if (looksLike === "Sand") {
-    document.getElementById("llImg").src = "src/Icons/DustSand.png";
-  } else if (looksLike === "Smoke") {
-    document.getElementById("llImg").src = "src/Icons/Smoke.png";
-  } else if (looksLike === "Snow") {
-    document.getElementById("llImg").src = "src/Icons/Snow.png";
-  } else if (looksLike === "Squall") {
-    document.getElementById("llImg").src = "src/Icons/Squall.png";
-  } else if (looksLike === "Thunderstorm") {
-    document.getElementById("llImg").src = "src/Icons/Thunderstorm.png";
-  } else if (looksLike === "Tornado") {
-    document.getElementById("llImg").src = "src/Icons/Tornado.png";
-  }
   let humidity = response.data.main.humidity;
   let humidityData = document.querySelector("#humidity");
   humidityData.innerHTML = `${humidity}%`;
@@ -146,6 +116,71 @@ function showTemperature(response) {
   fahrenheitHighLow = `H ${Math.round((high * 9) / 5 + 32)}°F/L ${Math.round(
     (low * 9) / 5 + 32
   )}°F`;
+  looksLikeImgs = response.data.weather[0].main;
+}
+
+function looksLikeCall() {
+  if (looksLikeImgs === "Ash") {
+    document.getElementById("llImg").src = "src/Icons/Ash.png";
+    document.getElementById("container").style =
+      "background-image: url('src/Backgrounds/DustSmokeAshEtc.jpeg');";
+  } else if (looksLikeImgs === "Clear") {
+    document.getElementById("llImg").src = "src/Icons/Clear.png";
+    document.getElementById("container").style =
+      "background-image: url('src/Backgrounds/Clear.jpeg');";
+  } else if (looksLikeImgs === "Clouds") {
+    document.getElementById("llImg").src = "src/Icons/Clouds.png";
+    document.getElementById("container").style =
+      "background-image: url('src/Backgrounds/Clouds.jpeg');";
+  } else if (looksLikeImgs === "Drizzle") {
+    document.getElementById("llImg").src = "src/Icons/Drizzle.png";
+    document.getElementById("container").style =
+      "background-image: url('src/Backgrounds/Rain.jpeg');";
+  } else if (looksLikeImgs === "Dust") {
+    document.getElementById("llImg").src = "src/Icons/DustSand.png";
+    document.getElementById("container").style =
+      "background-image: url('src/Backgrounds/DustSmokeAshEtc.jpeg');";
+  } else if (looksLikeImgs === "Fog") {
+    document.getElementById("llImg").src = "src/Icons/FogHaze.png";
+    document.getElementById("container").style =
+      "background-image: url('src/Backgrounds/FogMist.jpeg');";
+  } else if (looksLikeImgs === "Haze") {
+    document.getElementById("llImg").src = "src/Icons/FogHaze.png";
+    document.getElementById("container").style =
+      "background-image: url('src/Backgrounds/FogMist.jpeg');";
+  } else if (looksLikeImgs === "Mist") {
+    document.getElementById("llImg").src = "src/Icons/Mist.png";
+    document.getElementById("container").style =
+      "background-image: url('src/Backgrounds/FogMist.jpeg');";
+  } else if (looksLikeImgs === "Rain") {
+    document.getElementById("llImg").src = "src/Icons/Rain.png";
+    document.getElementById("container").style =
+      "background-image: url('src/Backgrounds/Rain.jpeg');";
+  } else if (looksLikeImgs === "Sand") {
+    document.getElementById("llImg").src = "src/Icons/DustSand.png";
+    document.getElementById("container").style =
+      "background-image: url('src/Backgrounds/Sand.jpeg');";
+  } else if (looksLikeImgs === "Smoke") {
+    document.getElementById("llImg").src = "src/Icons/Smoke.png";
+    document.getElementById("container").style =
+      "background-image: url('src/Backgrounds/DustSmokeAshEtc.jpeg');";
+  } else if (looksLikeImgs === "Snow") {
+    document.getElementById("llImg").src = "src/Icons/Snow.png";
+    document.getElementById("container").style =
+      "background-image: url('src/Backgrounds/Snow.jpeg');";
+  } else if (looksLikeImgs === "Squall") {
+    document.getElementById("llImg").src = "src/Icons/Squall.png";
+    document.getElementById("container").style =
+      "background-image: url('src/Backgrounds/Snow.jpeg');";
+  } else if (looksLikeImgs === "Thunderstorm") {
+    document.getElementById("llImg").src = "src/Icons/Thunderstorm.png";
+    document.getElementById("container").style =
+      "background-image: url('src/Backgrounds/Thunderstorm.jpeg');";
+  } else if (looksLikeImgs === "Tornado") {
+    document.getElementById("llImg").src = "src/Icons/Tornado.png";
+    document.getElementById("container").style =
+      "background-image: url('src/Backgrounds/Tornado.jpeg');";
+  }
 }
 
 function initiateOneCall(response) {
@@ -199,13 +234,13 @@ function initiateAirQual(response) {
   let airQual = response.data.list[0].main.aqi;
   let airQualData = document.querySelector("#airQual");
   if (airQual === 1) {
-    airQualData.innerHTML = `Good`;
+    airQualData.innerHTML = `Very Good`;
   }
   if (airQual === 2) {
-    airQualData.innerHTML = `Fair`;
+    airQualData.innerHTML = `Good`;
   }
   if (airQual === 3) {
-    airQualData.innerHTML = `Moderate`;
+    airQualData.innerHTML = `Fair`;
   }
   if (airQual === 4) {
     airQualData.innerHTML = `Poor`;
@@ -218,6 +253,7 @@ function initiateAirQual(response) {
 let celciusTemperature = null;
 let celciusHighLow = null;
 let fahrenheitHighLow = null;
+let looksLikeImgs = null;
 
 //MAIN Celcius
 function changeToCel(event) {
