@@ -329,3 +329,21 @@ function getFar() {
   let farTempSix = document.querySelector("#sixthTemp");
   farTempSix.innerHTML = `66°F`;
 }
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#extendedforecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Sat", "Sun", "Mon", "Tues", "Wed", "Thurs"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+            <span id="forecastDay">${day}</span><br />
+            <span class="forecastImg"><img src="src/Icons/Clouds.png" /></span>
+            <br /><span id="forecastTemp">N/A°C/N/A°C</span>
+          </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+displayForecast();
