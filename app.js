@@ -140,15 +140,15 @@ function looksLikeCall() {
     document.getElementById("container").style =
       "background-image: url('src/Backgrounds/Rain.jpeg');";
   } else if (looksLikeImgs === "Dust") {
-    document.getElementById("llImg").src = "src/Icons/DustSand.png";
+    document.getElementById("llImg").src = "src/Icons/Dust.png";
     document.getElementById("container").style =
       "background-image: url('src/Backgrounds/DustSmokeAshEtc.jpeg');";
   } else if (looksLikeImgs === "Fog") {
-    document.getElementById("llImg").src = "src/Icons/FogHaze.png";
+    document.getElementById("llImg").src = "src/Icons/Fog.png";
     document.getElementById("container").style =
       "background-image: url('src/Backgrounds/FogMist.jpeg');";
   } else if (looksLikeImgs === "Haze") {
-    document.getElementById("llImg").src = "src/Icons/FogHaze.png";
+    document.getElementById("llImg").src = "src/Icons/Haze.png";
     document.getElementById("container").style =
       "background-image: url('src/Backgrounds/FogMist.jpeg');";
   } else if (looksLikeImgs === "Mist") {
@@ -160,7 +160,7 @@ function looksLikeCall() {
     document.getElementById("container").style =
       "background-image: url('src/Backgrounds/Rain.jpeg');";
   } else if (looksLikeImgs === "Sand") {
-    document.getElementById("llImg").src = "src/Icons/DustSand.png";
+    document.getElementById("llImg").src = "src/Icons/Sand.png";
     document.getElementById("container").style =
       "background-image: url('src/Backgrounds/Sand.jpeg');";
   } else if (looksLikeImgs === "Smoke") {
@@ -315,7 +315,9 @@ function displayForecast(response) {
         forecastHTML +
         `<div class="col-2">
             <span id="forecastDay">${formatDay(forecastDay.dt)}</span><br />
-            <span class="forecastImg"><img src="src/Icons/Clouds.png" /></span>
+            <span class="forecastImg"><img id="forecastImg" src="src/Icons/${
+              forecastDay.weather[0].main
+            }.png" /></span>
             <br /><span id="forecastTemp">${Math.round(
               forecastDay.temp.max
             )}°C/${Math.round(forecastDay.temp.min)}°C</span>
