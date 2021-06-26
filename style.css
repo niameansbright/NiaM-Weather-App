@@ -120,7 +120,6 @@ form {
   color: #fef200;
   cursor: pointer;
 }
-
 .highLow {
   font-size: 14px;
 }
@@ -149,6 +148,9 @@ form {
   width: 28px;
   padding: 5px 0px 0px 0px;
   margin: 0px;
+}
+#forecastTemp {
+  font-size: 14px;
 }
 footer {
   text-align: center;

@@ -92,6 +92,9 @@ function showTemperature(response) {
     .get(`${apiUrlOc}lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`)
     .then(initiateOneCall);
   axios
+    .get(`${apiUrlOc}lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`)
+    .then(displayForecast);
+  axios
     .get(`${apiUrlAirQual}lat=${lat}&lon=${lon}&appid=${apiKey}`)
     .then(initiateAirQual)
     .then(looksLikeCall);
@@ -184,9 +187,9 @@ function looksLikeCall() {
 }
 
 function initiateOneCall(response) {
-  let precip = Math.round(response.data.daily[0].pop);
+  let precip = Math.round(response.data.hourly[0].pop);
   let precipData = document.querySelector("#precip");
-  precipData.innerHTML = `${precip}%`;
+  precipData.innerHTML = `${precip * 100}%`;
   let uvIndex = response.data.current.uvi;
   let uvIndexData = document.querySelector("#uvIndex");
   uvIndexData.innerHTML = `${uvIndex}`;
@@ -293,57 +296,32 @@ function showMoonSign(response) {
   let moonsignData = document.querySelector("#moonsign");
   moonsignData.innerHTML = `${moonsign}`;
 }
-
 //Sun Sign Work In Progress
 
-//ADD TO MAIN Celcius Work in Progress
-function changeToCell() {
-  let celTempOne = document.querySelector("#firstTemp");
-  celTempOne.innerHTML = `19°C`;
-  let celTempTwo = document.querySelector("#secondTemp");
-  celTempTwo.innerHTML = `19°C`;
-  let celTempThree = document.querySelector("#thirdTemp");
-  celTempThree.innerHTML = `19°C`;
-  let celTempFour = document.querySelector("#fourthTemp");
-  celTempFour.innerHTML = `19°C`;
-  let celTempFive = document.querySelector("#fifthTemp");
-  celTempFive.innerHTML = `19°C`;
-  let celTempSix = document.querySelector("#sixthTemp");
-  celTempSix.innerHTML = `19°C`;
-}
-let cellLink = document.querySelector("#celcius");
-cellLink.addEventListener("click", changeToCel);
-
-//ADD TO MAIN Fahrenheit Work In Progress
-function getFar() {
-  let farTempOne = document.querySelector("#firstTemp");
-  farTempOne.innerHTML = `66°F`;
-  let farTempTwo = document.querySelector("#secondTemp");
-  farTempTwo.innerHTML = `66°F`;
-  let farTempThree = document.querySelector("#thirdTemp");
-  farTempThree.innerHTML = `66°F`;
-  let farTempFour = document.querySelector("#fourthTemp");
-  farTempFour.innerHTML = `66°F`;
-  let farTempFive = document.querySelector("#fifthTemp");
-  farTempFive.innerHTML = `66°F`;
-  let farTempSix = document.querySelector("#sixthTemp");
-  farTempSix.innerHTML = `66°F`;
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#extendedforecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Sat", "Sun", "Mon", "Tues", "Wed", "Thurs"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2">
-            <span id="forecastDay">${day}</span><br />
+  forecast.forEach(function (forecastDay, index) {
+    if (index >= 0 && index <= 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
+            <span id="forecastDay">${formatDay(forecastDay.dt)}</span><br />
             <span class="forecastImg"><img src="src/Icons/Clouds.png" /></span>
-            <br /><span id="forecastTemp">N/A°C/N/A°C</span>
+            <br /><span id="forecastTemp">${Math.round(
+              forecastDay.temp.max
+            )}°C/${Math.round(forecastDay.temp.min)}°C</span>
           </div>`;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-displayForecast();
