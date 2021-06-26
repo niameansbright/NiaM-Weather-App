@@ -93,7 +93,8 @@ function showTemperature(response) {
     .then(initiateOneCall);
   axios
     .get(`${apiUrlOc}lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`)
-    .then(displayForecast);
+    .then(displayForecast)
+    .then(showSunSign);
   axios
     .get(`${apiUrlAirQual}lat=${lat}&lon=${lon}&appid=${apiKey}`)
     .then(initiateAirQual)
@@ -195,7 +196,10 @@ function initiateOneCall(response) {
   uvIndexData.innerHTML = `${uvIndex}`;
   let moonphase = response.data.daily[0].moon_phase;
   let moonphaseData = document.querySelector("#moonphase");
-  if (moonphase >= 0 && moonphase <= 0.0625) {
+  if (
+    (moonphase >= 0 && moonphase <= 0.0625) ||
+    (moonphase >= 0.9376 && moonphase <= 1)
+  ) {
     moonphaseData.innerHTML = `New Moon`;
     document.getElementById("moon").src = "src/Moons/New Moon.png";
   }
@@ -226,10 +230,6 @@ function initiateOneCall(response) {
   if (moonphase >= 0.8126 && moonphase <= 0.9375) {
     moonphaseData.innerHTML = `Waning Crescent`;
     document.getElementById("moon").src = "src/Moons/Waning Crescent.png";
-  }
-  if (moonphase >= 0.9376 && moonphase <= 1) {
-    moonphaseData.innerHTML = `New Moon`;
-    document.getElementById("moon").src = "src/Moons/New Moon.png";
   }
 }
 
@@ -290,14 +290,6 @@ function changeToFar(event) {
 let farLink = document.querySelector("#fahrenheit");
 farLink.addEventListener("click", changeToFar);
 
-//Moon Sign Work In Progress
-function showMoonSign(response) {
-  let moonsign = response.data.planets[0].name;
-  let moonsignData = document.querySelector("#moonsign");
-  moonsignData.innerHTML = `${moonsign}`;
-}
-//Sun Sign Work In Progress
-
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
@@ -318,12 +310,88 @@ function displayForecast(response) {
             <span class="forecastImg"><img id="forecastImg" src="src/Icons/${
               forecastDay.weather[0].main
             }.png" /></span>
-            <br /><span id="forecastTemp">${Math.round(
+            <br /><span id="forecastTemp"><span id = "forecastHigh"><strong>${Math.round(
               forecastDay.temp.max
-            )}°C/${Math.round(forecastDay.temp.min)}°C</span>
+            )}°C</strong></span>/<span id = "forecastLow">${Math.round(
+          forecastDay.temp.min
+        )}°C</span></span>
           </div>`;
     }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+//Moon Sign Work In Progress
+function showMoonSign(response) {
+  let moonsign = response.data.planets[0].name;
+  let moonsignData = document.querySelector("#moonsign");
+  moonsignData.innerHTML = `${moonsign}`;
+}
+//Sun Sign Work In Progress
+function showSunSign() {
+  let sunsignData = document.querySelector("#sunsign");
+  {
+    if (
+      (date >= 21 && months === "March") ||
+      (date <= 19 && months === "April")
+    ) {
+      sunsignData.innerHTML = `Aries♈️`;
+    } else if (
+      (date >= 20 && months === "April") ||
+      (date <= 20 && months === "May")
+    ) {
+      sunsignData.innerHTML = `Taurus♉️`;
+    } else if (
+      (date >= 21 && months === "May") ||
+      (date <= 20 && months === "June")
+    ) {
+      sunsignData.innerHTML = `Gemini♊️`;
+    } else if (
+      (date >= 21 && month === "June") ||
+      (date <= 22 && months === "July")
+    ) {
+      sunsignData.innerHTML = `Cancer♋️`;
+    } else if (
+      (date >= 23 && months === "July") ||
+      (date <= 22 && months === "August")
+    ) {
+      sunsignData.innerHTML = `Leo♌️`;
+    } else if (
+      (date >= 23 && months === "August") ||
+      (date <= 22 && months === "September")
+    ) {
+      sunsignData.innerHTML = `Virgo♍️`;
+    } else if (
+      (date >= 23 && months === "September") ||
+      (date <= 22 && months === "October")
+    ) {
+      sunsignData.innerHTML = `Libra♎️`;
+    } else if (
+      (date >= 23 && months === "October") ||
+      (date <= 21 && months === "November")
+    ) {
+      sunsignData.innerHTML = `Scorpio♏️`;
+    } else if (
+      (date >= 22 && months === "November") ||
+      (date <= 21 && months === "December")
+    ) {
+      sunsignData.innerHTML = `Sagittrius♐️`;
+    } else if (
+      (date >= 22 && months === "December") ||
+      (date <= 19 && months === "January")
+    ) {
+      sunsignData.innerHTML = `Capricorn♑️`;
+    } else if (
+      (date >= 20 && months === "January") ||
+      (date <= 18 && months === "February")
+    ) {
+      sunsignData.innerHTML = `Aquarius♒️`;
+    } else if (
+      (date >= 19 && months === "February") ||
+      (date <= 20 && months === "March")
+    ) {
+      sunsignData.innerHTML = `Pisces♓️`;
+    }
+  }
 }
