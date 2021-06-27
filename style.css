@@ -9,8 +9,8 @@ body {
 }
 header h1 {
   text-align: center;
-  padding: 5px 0px 15px 0px;
-  line-height: 100%;
+  padding: 5px 0px 11px 0px;
+  line-height: 95%;
   font-family: DotGothic16;
 }
 #happyDay {
@@ -19,7 +19,7 @@ header h1 {
 #container {
   border: 1px solid black;
   border-radius: 10px;
-  max-width: 700px;
+  max-width: 705px;
   margin: 0 auto;
   background-size: cover;
 }
@@ -31,7 +31,7 @@ p {
 }
 form {
   text-align: center;
-  padding: 20px 0px 5px 0px;
+  padding: 21px 0px 2px 0px;
   font-family: DotGothic16;
 }
 #formButton {
@@ -55,7 +55,7 @@ form {
   text-align: center;
   font-size: 12px;
   font-family: DotGothic16;
-  padding: 0px 0px 5px 0px;
+  padding: 0px 0px 3px 0px;
   font-weight: bold;
 }
 .currentLocationOption a:link {
@@ -71,8 +71,8 @@ form {
   color: #fef200;
 }
 .main {
-  padding: 0px;
-  margin: 0px 0px 20px 10px;
+  padding: 0px 0px 20px 10px;
+  margin: 0px;
   font-family: DotGothic16;
 }
 #looksLikeImg img {
@@ -89,7 +89,7 @@ form {
   margin: 0px;
 }
 .temp {
-  text-align: left;
+  text-align: center;
   padding-top: 40px;
   line-height: 10px;
   margin: 0px;
@@ -122,31 +122,32 @@ form {
 }
 .highLow {
   font-size: 14px;
+  position: relative;
+  left: -20px;
+  padding-top: 5px;
 }
 .moonforecast {
   text-align: center;
   padding: 0px;
   margin: 0px;
-  line-height: 11px;
   font-size: 13px;
 }
 #moonImg img {
-  width: 52px;
+  width: 55px;
   margin: 0 auto;
-  padding: 0px;
+  padding: 6px 0px;
 }
 #sunsignImg img {
   width: 17px;
 }
 .extendedforecast {
   text-align: center;
-  padding: 0px 0px 20px 0px;
+  padding: 0px 0px 12px 0px;
   margin: 0px;
   font-family: DotGothic16;
 }
 .forecastImg img {
   width: 28px;
-  padding: 5px 0px 0px 0px;
   margin: 0px;
 }
 #forecastTemp {
