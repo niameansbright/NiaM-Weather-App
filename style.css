@@ -9,17 +9,17 @@ body {
 }
 header h1 {
   text-align: center;
-  padding: 5px 0px 15px 0px;
+  padding: 0.25% 0% 0.75% 0%;
   line-height: 100%;
   font-family: DotGothic16;
 }
 #happyDay {
-  padding: 20px 0px 0px 0px;
+  padding: 1.5% 0% 0% 0%;
 }
 #container {
   border: 1px solid black;
   border-radius: 10px;
-  max-width: 700px;
+  max-width: 55%;
   margin: 0 auto;
   background-size: cover;
 }
@@ -31,7 +31,7 @@ p {
 }
 form {
   text-align: center;
-  padding: 20px 0px 5px 0px;
+  padding: 3% 0% 0.25% 0%;
   font-family: DotGothic16;
 }
 #formButton {
@@ -53,9 +53,9 @@ form {
 }
 .currentLocationOption {
   text-align: center;
-  font-size: 12px;
+  font-size: 75%;
   font-family: DotGothic16;
-  padding: 0px 0px 5px 0px;
+  padding: 0% 0% 0.25% 0%;
   font-weight: bold;
 }
 .currentLocationOption a:link {
@@ -72,30 +72,29 @@ form {
 }
 .main {
   padding: 0px;
-  margin: 0px 0px 20px 10px;
+  margin: 0% 0% 3% 1.5%;
   font-family: DotGothic16;
 }
 #looksLikeImg img {
-  width: 28px;
+  width: 10.5%;
 }
 .weatherSpecs {
   line-height: 120%;
-  font-size: 14px;
-  padding: 10px 0px;
+  font-size: 88%;
+  padding: 4% 0%;
 }
 .temp h1 {
-  font-size: 77px;
+  font-size: 480%;
   padding: 0px;
   margin: 0px;
 }
 .temp {
   text-align: left;
-  padding-top: 40px;
-  line-height: 10px;
+  padding-top: 20%;
   margin: 0px;
 }
 .degrees {
-  font-size: 16px;
+  font-size: 21%;
   vertical-align: text-top;
 }
 .degrees .active a:link {
@@ -121,41 +120,41 @@ form {
   cursor: pointer;
 }
 .highLow {
-  font-size: 14px;
+  font-size: 88%;
 }
 .moonforecast {
   text-align: center;
   padding: 0px;
   margin: 0px;
-  line-height: 11px;
-  font-size: 13px;
+  line-height: 80%;
+  font-size: 80%;
 }
 #moonImg img {
-  width: 52px;
+  width: 34%;
   margin: 0 auto;
   padding: 0px;
 }
 #sunsignImg img {
-  width: 17px;
+  width: 11%;
 }
 .extendedforecast {
   text-align: center;
-  padding: 0px 0px 20px 0px;
+  padding: 0% 0% 2% 0%;
   margin: 0px;
   font-family: DotGothic16;
 }
 .forecastImg img {
-  width: 28px;
-  padding: 5px 0px 0px 0px;
+  width: 30%;
+  padding: 0.25% 0% 0% 0%;
   margin: 0px;
 }
 #forecastTemp {
-  font-size: 14px;
+  font-size: 88%;
 }
 footer {
   text-align: center;
-  font-size: 12px;
-  padding: 10px 0px;
+  font-size: 75%;
+  padding: 0.75% 0%;
   font-family: DotGothic16;
   font-weight: bold;
 }
