@@ -20,6 +20,7 @@ header h1 {
   border: 1px solid black;
   border-radius: 10px;
   max-width: 705px;
+  min-width: 305px;
   margin: 0 auto;
   background-size: cover;
 }
@@ -142,7 +143,7 @@ form {
 }
 .extendedforecast {
   text-align: center;
-  padding: 0px 0px 12px 0px;
+  padding: 0px 5px 12px 5px;
   margin: 0px;
   font-family: DotGothic16;
 }
