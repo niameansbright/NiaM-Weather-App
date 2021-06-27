@@ -1,10 +1,24 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid black;
+  -webkit-text-fill-color: black;
+  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
 body {
   background: radial-gradient(
-    circle at 7.4% 45.1%,
-    rgb(244, 229, 252) 0%,
-    rgb(225, 249, 255) 45.1%,
-    rgb(238, 253, 253) 78.4%,
-    rgb(247, 255, 249) 90%
+    circle at 7.5% 24%,
+    rgb(205, 179, 218) 0%,
+    rgb(214, 216, 255) 25.5%,
+    rgb(223, 238, 242) 62.3%,
+    rgb(248, 234, 224) 93.8%
   );
 }
 header h1 {
@@ -12,17 +26,19 @@ header h1 {
   padding: 5px 0px 11px 0px;
   line-height: 95%;
   font-family: DotGothic16;
+  color: black;
 }
 #happyDay {
   padding: 20px 0px 0px 0px;
 }
 #container {
-  border: 1px solid black;
-  border-radius: 10px;
+  border: 3px solid black;
+  border-radius: 7px;
   max-width: 705px;
   min-width: 305px;
   margin: 0 auto;
   background-size: cover;
+  box-shadow: 3px 5px black;
 }
 h1,
 h2,
@@ -36,21 +52,49 @@ form {
   font-family: DotGothic16;
 }
 #formButton {
-  border: 1px solid black;
-  border-radius: 2px;
-  background-color: #f4e5fc;
+  border: 2px solid black;
+  border-radius: 4px;
+  background-color: #a091a3;
+  box-shadow: 1px 2px black;
 }
 #formButton:hover {
-  background-color: #fef200;
+  background: radial-gradient(
+    circle at 7.5% 24%,
+    rgb(205, 179, 218) 0%,
+    rgb(214, 216, 255) 25.5%,
+    rgb(223, 238, 242) 62.3%,
+    rgb(248, 234, 224) 93.8%
+  );
   color: black;
 }
 #city-input {
-  border: 1px solid black;
-  border-radius: 2px;
+  border: 2px solid black;
+  border-radius: 4px;
   outline: none;
+  background: radial-gradient(
+    circle at 7.5% 24%,
+    rgb(205, 179, 218) 0%,
+    rgb(214, 216, 255) 25.5%,
+    rgb(223, 238, 242) 62.3%,
+    rgb(248, 234, 224) 93.8%
+  );
+  box-shadow: 1px 2px black;
 }
 #city-input:focus {
   border: 1px solid #fef200;
+  background: radial-gradient(
+    circle at 7.5% 24%,
+    rgb(205, 179, 218) 0%,
+    rgb(214, 216, 255) 25.5%,
+    rgb(223, 238, 242) 62.3%,
+    rgb(248, 234, 224) 93.8%
+  );
+  box-shadow: 1px 2px black;
+}
+#city-input:active {
+  border: 1px solid #fef200;
+  background: #a091a3;
+  box-shadow: 1px 2px black;
 }
 .currentLocationOption {
   text-align: center;
@@ -61,20 +105,21 @@ form {
 }
 .currentLocationOption a:link {
   text-decoration: none;
-  color: #f4e5fc;
+  color: #6b5f72;
 }
 .currentLocationOption a:visited {
   text-decoration: none;
-  color: #f4e5fc;
+  color: #6b5f72;
 }
 .currentLocationOption a:hover {
   cursor: pointer;
-  color: #fef200;
+  color: black;
 }
 .main {
   padding: 0px 0px 20px 10px;
   margin: 0px;
   font-family: DotGothic16;
+  color: black;
 }
 #looksLikeImg img {
   width: 28px;
@@ -83,17 +128,20 @@ form {
   line-height: 120%;
   font-size: 14px;
   padding: 10px 0px;
+  color: black;
 }
 .temp h1 {
   font-size: 77px;
   padding: 0px;
   margin: 0px;
+  color: black;
 }
 .temp {
   text-align: center;
   padding-top: 40px;
   line-height: 10px;
   margin: 0px;
+  color: black;
 }
 .degrees {
   font-size: 16px;
@@ -110,15 +158,15 @@ form {
   color: black;
 }
 .degrees .inactive a:link {
-  color: #f4e5fc;
+  color: #6b5f72;
   text-decoration: none;
 }
 .degrees .inactive a:visited {
-  color: #f4e5fc;
+  color: #6b5f72;
 }
 .degrees .inactive a:hover {
   text-decoration: none;
-  color: #fef200;
+  color: black;
   cursor: pointer;
 }
 .highLow {
@@ -126,26 +174,41 @@ form {
   position: relative;
   left: -20px;
   padding-top: 5px;
+  color: black;
+}
+#moonContainer {
+  border: 3px solid black;
+  border-radius: 7px;
+  max-width: 140px;
+  min-width: 100px;
+  margin: 0 auto;
+  background-size: cover;
+  vertical-align: top;
+  box-shadow: 3px 5px black;
 }
 .moonforecast {
   text-align: center;
-  padding: 0px;
-  margin: 0px;
-  font-size: 13px;
+  padding: 10px 0px;
+  font-size: 11px;
+  color: white;
 }
 #moonImg img {
   width: 55px;
   margin: 0 auto;
   padding: 6px 0px;
 }
+#sunImg img {
+  width: 17px;
+}
 #sunsignImg img {
   width: 17px;
 }
 .extendedforecast {
   text-align: center;
-  padding: 0px 5px 12px 5px;
+  padding: 10px 5px 0px 5px;
   margin: 0px;
   font-family: DotGothic16;
+  color: black;
 }
 .forecastImg img {
   width: 28px;
@@ -153,6 +216,7 @@ form {
 }
 #forecastTemp {
   font-size: 14px;
+  padding-bottom: 5px;
 }
 footer {
   text-align: center;
@@ -160,15 +224,16 @@ footer {
   padding: 10px 0px;
   font-family: DotGothic16;
   font-weight: bold;
+  color: black;
 }
 #gitHubLink a:link {
   text-decoration: none;
-  color: #676d79;
+  color: #6b5f72;
 }
 #gitHubLink a:visited {
   text-decoration: none;
-  color: #676d79;
+  color: #6b5f72;
 }
 #gitHubLink a:hover {
-  color: #fef200;
+  color: #a091a3;
 }

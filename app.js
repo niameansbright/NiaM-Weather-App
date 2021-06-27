@@ -131,7 +131,7 @@ function looksLikeCall() {
   } else if (looksLikeImgs === "Clear") {
     document.getElementById("llImg").src = "src/Icons/Clear.png";
     document.getElementById("container").style =
-      "background-image: url('src/Backgrounds/Clear.jpeg');";
+      "background-image: url('src/Backgrounds/Clear2.jpeg');";
   } else if (looksLikeImgs === "Clouds") {
     document.getElementById("llImg").src = "src/Icons/Clouds.png";
     document.getElementById("container").style =
@@ -336,62 +336,98 @@ function showSunSign() {
       (date >= 21 && months === "March") ||
       (date <= 19 && months === "April")
     ) {
-      sunsignData.innerHTML = `Aries♈️`;
+      sunsignData.innerHTML = `<p><span id="sunImg"
+                  ><img src="src/Icons/Clear.png" />Sun in Aries<span id="sunsignImg"
+                  ><img src="src/Zodiacs/Aries.png" /></span
+                ></p>`;
     } else if (
       (date >= 20 && months === "April") ||
       (date <= 20 && months === "May")
     ) {
-      sunsignData.innerHTML = `Taurus♉️`;
+      sunsignData.innerHTML = `<p><span id="sunImg"
+                  ><img src="src/Icons/Clear.png" />Sun in Taurus<span id="sunsignImg"
+                  ><img src="src/Zodiacs/Taurus.png" /></span
+                ></p>`;
     } else if (
       (date >= 21 && months === "May") ||
       (date <= 20 && months === "June")
     ) {
-      sunsignData.innerHTML = `Gemini♊️`;
+      sunsignData.innerHTML = `<p><span id="sunImg"
+                  ><img src="src/Icons/Clear.png" />Sun in Gemini<span id="sunsignImg"
+                  ><img src="src/Zodiacs/Gemini.png" /></span
+                ></p>`;
     } else if (
       (date >= 21 && month === "June") ||
       (date <= 22 && months === "July")
     ) {
-      sunsignData.innerHTML = `Cancer♋️`;
+      sunsignData.innerHTML = `<p><span id="sunImg"
+                  ><img src="src/Icons/Clear.png" />Sun in Cancer<span id="sunsignImg"
+                  ><img src="src/Zodiacs/Cancer.png" /></span
+                ></p>`;
     } else if (
       (date >= 23 && months === "July") ||
       (date <= 22 && months === "August")
     ) {
-      sunsignData.innerHTML = `Leo♌️`;
+      sunsignData.innerHTML = `<p><span id="sunImg"
+                  ><img src="src/Icons/Clear.png" />Sun in Leo<span id="sunsignImg"
+                  ><img src="src/Zodiacs/Leo.png" /></span
+                ></p>`;
     } else if (
       (date >= 23 && months === "August") ||
       (date <= 22 && months === "September")
     ) {
-      sunsignData.innerHTML = `Virgo♍️`;
+      sunsignData.innerHTML = `<p><span id="sunImg"
+                  ><img src="src/Icons/Clear.png" />Sun in Virgo<span id="sunsignImg"
+                  ><img src="src/Zodiacs/Virgo.png" /></span
+                ></p>`;
     } else if (
       (date >= 23 && months === "September") ||
       (date <= 22 && months === "October")
     ) {
-      sunsignData.innerHTML = `Libra♎️`;
+      sunsignData.innerHTML = `<p><span id="sunImg"
+                  ><img src="src/Icons/Clear.png" />Sun in Libra<span id="sunsignImg"
+                  ><img src="src/Zodiacs/Libra.png" /></span
+                ></p>`;
     } else if (
       (date >= 23 && months === "October") ||
       (date <= 21 && months === "November")
     ) {
-      sunsignData.innerHTML = `Scorpio♏️`;
+      sunsignData.innerHTML = `<p><span id="sunImg"
+                  ><img src="src/Icons/Clear.png" />Sun in Scorpio<span id="sunsignImg"
+                  ><img src="src/Zodiacs/Scorpio.png" /></span
+                ></p>`;
     } else if (
       (date >= 22 && months === "November") ||
       (date <= 21 && months === "December")
     ) {
-      sunsignData.innerHTML = `Sagittrius♐️`;
+      sunsignData.innerHTML = `<p><span id="sunImg"
+                  ><img src="src/Icons/Clear.png" />Sun in Sagittarius<span id="sunsignImg"
+                  ><img src="src/Zodiacs/Sagittarius.png" /></span
+                ></p>`;
     } else if (
       (date >= 22 && months === "December") ||
       (date <= 19 && months === "January")
     ) {
-      sunsignData.innerHTML = `Capricorn♑️`;
+      sunsignData.innerHTML = `<p><span id="sunImg"
+                  ><img src="src/Icons/Clear.png" />Sun in Capricorn<span id="sunsignImg"
+                  ><img src="src/Zodiacs/Capricorn.png" /></span
+                ></p>`;
     } else if (
       (date >= 20 && months === "January") ||
       (date <= 18 && months === "February")
     ) {
-      sunsignData.innerHTML = `Aquarius♒️`;
+      sunsignData.innerHTML = `<p><span id="sunImg"
+                  ><img src="src/Icons/Clear.png" />Sun in Aquarius<span id="sunsignImg"
+                  ><img src="src/Zodiacs/Aquarius.png" /></span
+                ></p>`;
     } else if (
       (date >= 19 && months === "February") ||
       (date <= 20 && months === "March")
     ) {
-      sunsignData.innerHTML = `Pisces♓️`;
+      sunsignData.innerHTML = `<p><span id="sunImg"
+                  ><img src="src/Icons/Clear.png" />Sun in Pisces<span id="sunsignImg"
+                  ><img src="src/Zodiacs/Pisces.png" /></span
+                ></p>`;
     }
   }
 }
