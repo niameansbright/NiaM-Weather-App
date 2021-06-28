@@ -39,6 +39,7 @@ header h1 {
   margin: 0 auto;
   background-size: cover;
   box-shadow: 3px 5px black;
+  overflow: auto;
 }
 h1,
 h2,
@@ -54,10 +55,7 @@ form {
 #formButton {
   border: 2px solid black;
   border-radius: 4px;
-  background-color: #a091a3;
   box-shadow: 1px 2px black;
-}
-#formButton:hover {
   background: radial-gradient(
     circle at 7.5% 24%,
     rgb(205, 179, 218) 0%,
@@ -65,8 +63,13 @@ form {
     rgb(223, 238, 242) 62.3%,
     rgb(248, 234, 224) 93.8%
   );
-  color: black;
 }
+
+#formButton:hover {
+  background-image: url("src/Moons/StarsButton.jpg");
+  color: white;
+}
+
 #city-input {
   border: 2px solid black;
   border-radius: 4px;
@@ -79,9 +82,22 @@ form {
     rgb(248, 234, 224) 93.8%
   );
   box-shadow: 1px 2px black;
+  color: black;
 }
 #city-input:focus {
-  border: 1px solid #fef200;
+  border: 2px solid black;
+  background: radial-gradient(
+    circle at 7.5% 24%,
+    rgb(205, 179, 218) 0%,
+    rgb(214, 216, 255) 25.5%,
+    rgb(223, 238, 242) 62.3%,
+    rgb(248, 234, 224) 93.8%
+  );
+  box-shadow: 1px 2px black;
+  color: black;
+}
+#city-input:active {
+  border: 2px solid black;
   background: radial-gradient(
     circle at 7.5% 24%,
     rgb(205, 179, 218) 0%,
@@ -91,30 +107,40 @@ form {
   );
   box-shadow: 1px 2px black;
 }
-#city-input:active {
-  border: 1px solid #fef200;
-  background: #a091a3;
-  box-shadow: 1px 2px black;
-}
 .currentLocationOption {
   text-align: center;
   font-size: 12px;
   font-family: DotGothic16;
   padding: 0px 0px 3px 0px;
   font-weight: bold;
+  text-decoration: none;
+}
+.currentLocationOption .sunny a:link {
+  text-decoration: none;
+  color: #fff200;
+}
+.currentLocationOption .sunny a:visited {
+  text-decoration: none;
+  color: #fff200;
+}
+.currentLocationOption .sunny a:hover {
+  cursor: pointer;
+  color: black;
 }
 .currentLocationOption a:link {
   text-decoration: none;
-  color: #6b5f72;
+  color: #876891;
 }
 .currentLocationOption a:visited {
   text-decoration: none;
-  color: #6b5f72;
+  color: #876891;
 }
+
 .currentLocationOption a:hover {
   cursor: pointer;
   color: black;
 }
+
 .main {
   padding: 0px 0px 20px 10px;
   margin: 0px;
@@ -137,15 +163,16 @@ form {
   color: black;
 }
 .temp {
-  text-align: center;
-  padding-top: 40px;
-  line-height: 10px;
+  text-align: left;
+  padding-top: 5px;
   margin: 0px;
   color: black;
+  padding-top: 40px;
 }
 .degrees {
-  font-size: 16px;
+  font-size: 20%;
   vertical-align: text-top;
+  text-align: left;
 }
 .degrees .active a:link {
   color: black;
@@ -158,11 +185,11 @@ form {
   color: black;
 }
 .degrees .inactive a:link {
-  color: #6b5f72;
+  color: #876891;
   text-decoration: none;
 }
 .degrees .inactive a:visited {
-  color: #6b5f72;
+  color: #876891;
 }
 .degrees .inactive a:hover {
   text-decoration: none;
@@ -171,24 +198,23 @@ form {
 }
 .highLow {
   font-size: 14px;
-  position: relative;
-  left: -20px;
-  padding-top: 5px;
   color: black;
+  padding-top: 5px;
 }
 #moonContainer {
   border: 3px solid black;
   border-radius: 7px;
-  max-width: 140px;
+  max-width: 130px;
   min-width: 100px;
   margin: 0 auto;
   background-size: cover;
   vertical-align: top;
   box-shadow: 3px 5px black;
+  float: left;
 }
 .moonforecast {
   text-align: center;
-  padding: 10px 0px;
+  padding: 5px 0px;
   font-size: 11px;
   color: white;
 }
@@ -228,12 +254,12 @@ footer {
 }
 #gitHubLink a:link {
   text-decoration: none;
-  color: #6b5f72;
+  color: #6a6b77;
 }
 #gitHubLink a:visited {
   text-decoration: none;
-  color: #6b5f72;
+  color: #6a6b77;
 }
 #gitHubLink a:hover {
-  color: #a091a3;
+  color: #876891;
 }

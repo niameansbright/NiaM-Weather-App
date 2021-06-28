@@ -94,7 +94,8 @@ function showTemperature(response) {
   axios
     .get(`${apiUrlOc}lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`)
     .then(displayForecast)
-    .then(showSunSign);
+    .then(showSunSign)
+    .then(showMoonSign);
   axios
     .get(`${apiUrlAirQual}lat=${lat}&lon=${lon}&appid=${apiKey}`)
     .then(initiateAirQual)
@@ -131,7 +132,7 @@ function looksLikeCall() {
   } else if (looksLikeImgs === "Clear") {
     document.getElementById("llImg").src = "src/Icons/Clear.png";
     document.getElementById("container").style =
-      "background-image: url('src/Backgrounds/Clear2.jpeg');";
+      "background-image: url('src/Backgrounds/Clear.jpeg');";
   } else if (looksLikeImgs === "Clouds") {
     document.getElementById("llImg").src = "src/Icons/Clouds.png";
     document.getElementById("container").style =
@@ -312,7 +313,7 @@ function displayForecast(response) {
             }.png" /></span>
             <br /><span id="forecastTemp"><span id = "forecastHigh"><strong>${Math.round(
               forecastDay.temp.max
-            )}°C</strong></span>/<span id = "forecastLow">${Math.round(
+            )}°C</strong></span> / <span id = "forecastLow">${Math.round(
           forecastDay.temp.min
         )}°C</span></span>
           </div>`;
@@ -322,13 +323,7 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
-//Moon Sign Work In Progress
-function showMoonSign(response) {
-  let moonsign = response.data.planets[0].name;
-  let moonsignData = document.querySelector("#moonsign");
-  moonsignData.innerHTML = `${moonsign}`;
-}
-//Sun Sign Work In Progress
+//Sun Signs
 function showSunSign() {
   let sunsignData = document.querySelector("#sunsign");
   {
@@ -426,6 +421,108 @@ function showSunSign() {
     ) {
       sunsignData.innerHTML = `<p><span id="sunImg"
                   ><img src="src/Icons/Clear.png" />Sun in Pisces<span id="sunsignImg"
+                  ><img src="src/Zodiacs/Pisces.png" /></span
+                ></p>`;
+    }
+  }
+}
+
+//Moon Signs
+function showMoonSign() {
+  let moonsignData = document.querySelector("#moonsign");
+  {
+    if (
+      (date >= 1 && date <= 2 && months === "July") ||
+      (date <= 28 && date <= 29 && months === "July")
+    ) {
+      moonsignData.innerHTML = `<p>In Aries<span id="sunsignImg"
+                  ><img src="src/Zodiacs/Aries.png" /></span
+                ></p>`;
+    } else if (
+      (date >= 3 && date <= 5 && months === "July") ||
+      (date <= 30 && date <= 31 && months === "July")
+    ) {
+      moonsignData.innerHTML = `<p>In Taurus<span id="sunsignImg"
+                  ><img src="src/Zodiacs/Taurus.png" /></span
+                ></p>`;
+    }
+    if (
+      (date >= 6 && date <= 7 && months === "July") ||
+      (date <= 19 && months === "")
+    ) {
+      moonsignData.innerHTML = `<p>In Gemini<span id="sunsignImg"
+                  ><img src="src/Zodiacs/Gemini.png" /></span
+                ></p>`;
+    }
+    if (
+      (date >= 8 && date <= 9 && months === "July") ||
+      (date <= 19 && months === "")
+    ) {
+      moonsignData.innerHTML = `<p>In Cancer<span id="sunsignImg"
+                  ><img src="src/Zodiacs/Cancer.png" /></span
+                ></p>`;
+    }
+    if (
+      (date >= 10 && date <= 12 && months === "July") ||
+      (date <= 19 && months === "")
+    ) {
+      moonsignData.innerHTML = `<p>In Leo<span id="sunsignImg"
+                  ><img src="src/Zodiacs/Leo.png" /></span
+                ></p>`;
+    }
+    if (
+      (date >= 13 && date <= 14 && months === "July") ||
+      (date <= 19 && months === "")
+    ) {
+      moonsignData.innerHTML = `<p>In Virgo<span id="sunsignImg"
+                  ><img src="src/Zodiacs/Virgo.png" /></span
+                ></p>`;
+    }
+    if (
+      (date >= 15 && date <= 16 && months === "July") ||
+      (date <= 19 && months === "")
+    ) {
+      moonsignData.innerHTML = `<p>In Libra<span id="sunsignImg"
+                  ><img src="src/Zodiacs/Libra.png" /></span
+                ></p>`;
+    }
+    if (
+      (date >= 17 && date <= 18 && months === "July") ||
+      (date <= 19 && months === "")
+    ) {
+      moonsignData.innerHTML = `<p>In Scorpio<span id="sunsignImg"
+                  ><img src="src/Zodiacs/Scorpio.png" /></span
+                ></p>`;
+    }
+    if (
+      (date >= 19 && date <= 20 && months === "July") ||
+      (date <= 19 && months === "")
+    ) {
+      moonsignData.innerHTML = `<p>In Sagittarius<span id="sunsignImg"
+                  ><img src="src/Zodiacs/Sagittarius.png" /></span
+                ></p>`;
+    }
+    if (
+      (date >= 21 && date <= 23 && months === "July") ||
+      (date <= 19 && months === "")
+    ) {
+      moonsignData.innerHTML = `<p>In Cpricorn<span id="sunsignImg"
+                  ><img src="src/Zodiacs/Capricorn.png" /></span
+                ></p>`;
+    }
+    if (
+      (date >= 24 && date <= 25 && months === "July") ||
+      (date <= 19 && months === "")
+    ) {
+      moonsignData.innerHTML = `<p>In Aquarius<span id="sunsignImg"
+                  ><img src="src/Zodiacs/Aquarius.png" /></span
+                ></p>`;
+    }
+    if (
+      (date >= 28 && months === "June") ||
+      (date <= 26 && date <= 27 && months === "July")
+    ) {
+      moonsignData.innerHTML = `<p>In Pisces<span id="sunsignImg"
                   ><img src="src/Zodiacs/Pisces.png" /></span
                 ></p>`;
     }
